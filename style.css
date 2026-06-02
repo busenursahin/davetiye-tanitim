@@ -53,9 +53,9 @@
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 80px;
-    overflow-x: hidden !important;
-    max-width: 100%;
+    /* iOS/Android fix: overflow html+body ikilisinde dikey scroll'u kilitler, bu yüzden burada overflow ayarlamıyoruz */
     width: 100%;
+    height: 100%;
 }
 
 body {
@@ -63,10 +63,22 @@ body {
     color: var(--color-text);
     font-family: var(--font-body);
     line-height: 1.6;
-    overflow-x: hidden !important;
+    /* overflow-x: hidden body'de iOS Safari'de dikey scroll'u kilitler! */
+    /* Yatay overflow kontrolü .site-wrapper üzerinden yapılıyor */
+    overflow-x: visible;
+    overflow-y: auto;
     max-width: 100%;
     width: 100%;
     position: relative;
+    -webkit-overflow-scrolling: touch; /* iOS momentum scroll */
+}
+
+/* Yatay taşmayı body yerine wrapper'da engelle — iOS/Android scroll fix */
+.site-wrapper {
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+    min-height: 100vh;
 }
 
 /* -------------------------------------------------------------
@@ -394,8 +406,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .phone-mockup-wrapper {
     position: relative;
-    width: 320px;
+    width: 100%;
+    max-width: 320px;
     height: 640px;
+    margin: 0 auto;
 }
 
 .phone-mockup {
@@ -1046,7 +1060,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .phone-frame {
-    width: 320px;
+    width: 100%;
+    max-width: 320px;
     height: 640px;
     background: #ffffff;
     border: 12px solid #e4e4e7;
@@ -1980,5 +1995,35 @@ h1, h2, h3, h4, h5, h6 {
     
     .floating-card {
         display: none;
+    }
+
+    .mockup-body {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+    
+    .mockup-sidebar {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        border-right: none;
+        border-bottom: 1px solid rgba(190, 18, 60, 0.06);
+    }
+    
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .tabs {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .demo-album-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .contact-form-wrapper {
+        padding: 24px;
     }
 }
