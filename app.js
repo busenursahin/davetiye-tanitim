@@ -409,7 +409,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
-// --- 9. İletişim Formu Form submit logic ---
+// --- 9. İletişim Formu Form submit logic (Real Formspree Integration) ---
 function handleContactSubmit(event) {
     event.preventDefault();
     
@@ -423,18 +423,34 @@ function handleContactSubmit(event) {
     submitBtn.classList.add('loading');
     submitBtn.disabled = true;
 
-    setTimeout(() => {
+    // Gather Form Data
+    const data = new FormData(form);
+
+    fetch('https://formspree.io/f/xnjrelgd', {
+        method: 'POST',
+        body: data,
+        headers: {
+            'Accept': 'application/json'
+        }
+    })
+    .then(response => {
         submitBtn.classList.remove('loading');
         submitBtn.disabled = false;
 
-        // Display beautiful glass success response
-        responseBox.className = 'form-response-message success animate-pulse';
-        responseBox.innerHTML = '<i class="fa-solid fa-circle-check"></i> Harika! Sevimli mesajınız başarıyla iletildi. Destek ekibimiz en kısa sürede sizinle iletişime geçecektir.';
+        if (response.ok) {
+            // Display beautiful glass success response
+            responseBox.className = 'form-response-message success animate-pulse';
+            responseBox.innerHTML = '<i class="fa-solid fa-circle-check"></i> Harika! Mesajınız Formspree üzerinden başarıyla iletildi. En kısa sürede sizinle iletişime geçeceğiz.';
+            
+            // Clear form
+            form.reset();
+        } else {
+            // Display error if Formspree returns non-ok status
+            responseBox.className = 'form-response-message error';
+            responseBox.innerHTML = '<i class="fa-solid fa-circle-xmark"></i> Hata! Mesaj gönderilirken bir sorun oluştu. Lütfen bilgileri kontrol edip tekrar deneyin.';
+        }
 
-        // Clear form
-        form.reset();
-
-        // Clear success message after 6 seconds
+        // Clear response message after 6 seconds
         setTimeout(() => {
             responseBox.style.opacity = '0';
             setTimeout(() => {
@@ -443,6 +459,13 @@ function handleContactSubmit(event) {
                 responseBox.style.opacity = '1';
             }, 300);
         }, 6000);
-
-    }, 2000); // Simulate network latency
+    })
+    .catch(error => {
+        submitBtn.classList.remove('loading');
+        submitBtn.disabled = false;
+        
+        // Display network error response
+        responseBox.className = 'form-response-message error';
+        responseBox.innerHTML = '<i class="fa-solid fa-circle-xmark"></i> Hata! Bağlantı hatası oluştu. Lütfen internet bağlantınızı kontrol edip tekrar deneyin.';
+    });
 }
