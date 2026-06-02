@@ -53,6 +53,9 @@
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 80px;
+    overflow-x: hidden !important;
+    max-width: 100%;
+    width: 100%;
 }
 
 body {
@@ -60,7 +63,9 @@ body {
     color: var(--color-text);
     font-family: var(--font-body);
     line-height: 1.6;
-    overflow-x: hidden;
+    overflow-x: hidden !important;
+    max-width: 100%;
+    width: 100%;
     position: relative;
 }
 
@@ -1838,6 +1843,10 @@ h1, h2, h3, h4, h5, h6 {
    13. Responsive Adaptations (Mobile & Tablet)
 ------------------------------------------------------------- */
 @media (max-width: 1024px) {
+    .floating-card {
+        display: none;
+    }
+    
     .hero-container {
         grid-template-columns: 1fr;
         text-align: center;
