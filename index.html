@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitify | Yeni Nesil Dijital Davetiye & Etkinlik Yönetim Platformu</title>
+    <meta name="description" content="AI destekli dijital davetiyeler tasarlayın, LCV durumlarını anlık takip edin, ortak albüm oluşturun ve davetlilerinizle harita entegrasyonu ile kolayca buluşun.">
+    <!-- Google Fonts: Playfair Display for elegant headings, Outfit & Inter for body -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Premium Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Animated Background Glows (Cheerful warm colors) -->
+    <div class="bg-glow bg-glow-1"></div>
+    <div class="bg-glow bg-glow-2"></div>
+    <div class="bg-glow bg-glow-3"></div>
+
+    <!-- Navigation Bar -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo" id="logo">
+                <span class="logo-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></span>
+                <span class="logo-text">Invitify</span>
+            </a>
+            
+            <nav class="nav-links" id="nav-links">
+                <a href="#hero" class="nav-link active">Ana Sayfa</a>
+                <a href="#features" class="nav-link">Özellikler</a>
+                <a href="#templates" class="nav-link">Şablonlar</a>
+                <a href="#about" class="nav-link">Hakkımızda</a>
+                <a href="#contact" class="nav-link">İletişim</a>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="#interactive-demo" class="btn btn-primary btn-sm">Hemen Dene</a>
+                <button class="menu-toggle" id="menu-toggle" aria-label="Menüyü Aç">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <span class="badge"><i class="fa-solid fa-sparkles"></i> Sevgi ve Mutluluk Paylaştıkça Çoğalır</span>
+                <h1>En Güzel Gününüzü <br><span class="text-gradient">Zarafetle Taçlandırın</span></h1>
+                <p class="hero-lead">Invitify ile hayalinizdeki düğün, nişan veya kutlama davetiyesini yapay zeka ile tasarlayın. Sevdiklerinize kolayca ulaştırın, LCV yanıtlarını takip edin ve ortak albümde unutulmaz anılar biriktirin.</p>
+                <div class="hero-cta">
+                    <a href="#interactive-demo" class="btn btn-primary btn-lg"><i class="fa-solid fa-wand-magic-sparkles"></i> AI ile Oluşturmaya Başla</a>
+                    <a href="#features" class="btn btn-secondary btn-lg">Özellikleri Keşfet</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">10.000+</span>
+                        <span class="stat-label">Mutlu Çift</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">250.000+</span>
+                        <span class="stat-label">Gönderilen Davetiye</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">4.9/5</span>
+                        <span class="stat-label"><i class="fa-solid fa-star star-color"></i> Müşteri Memnuniyeti</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Hero Interactive Phone Mockup -->
+            <div class="hero-visual">
+                <div class="phone-mockup-wrapper">
+                    <div class="phone-mockup">
+                        <div class="phone-speaker"></div>
+                        <div class="phone-screen">
+                            <!-- Simulated Invitation Detail Inside Mobile App -->
+                            <div class="invitation-preview-card" id="invitation-mockup">
+                                <div class="inv-header">
+                                    <span class="inv-tag">Aşkla Kutluyoruz</span>
+                                </div>
+                                <div class="inv-body">
+                                    <h3 class="inv-title">Aylin & Kaan</h3>
+                                    <p class="inv-subtitle">Evleniyoruz!</p>
+                                    <div class="inv-divider"></div>
+                                    <p class="inv-date"><i class="fa-regular fa-calendar"></i> 12 Eylül 2026</p>
+                                    <p class="inv-time"><i class="fa-regular fa-clock"></i> 19:00</p>
+                                    <p class="inv-location"><i class="fa-solid fa-location-dot"></i> Çırağan Sarayı, İstanbul</p>
+                                </div>
+                                <div class="inv-actions">
+                                    <button class="btn btn-inv btn-accept"><i class="fa-solid fa-heart"></i> Katılıyorum</button>
+                                    <button class="btn btn-inv btn-decline"><i class="fa-solid fa-xmark"></i> Katılamıyorum</button>
+                                </div>
+                                <div class="inv-map-link">
+                                    <a href="#" class="map-action-btn"><i class="fa-solid fa-map-location-dot"></i> Haritada Yol Tarifi Al</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="floating-card card-guests">
+                        <div class="icon-circle"><i class="fa-solid fa-heart"></i></div>
+                        <div>
+                            <h4>+142 Katılımcı</h4>
+                            <p>Mutluluğu Paylaşıyor</p>
+                        </div>
+                    </div>
+                    <div class="floating-card card-ai">
+                        <div class="icon-circle"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                        <div>
+                            <h4>Romantik Tema</h4>
+                            <p>Çiçek ve Altın Detaylar</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-subtitle">Hayatınızı Kolaylaştıran Çözümler</span>
+                <h2 class="section-title">Neden <span class="text-gradient">Invitify</span>'ı Çok Seveceksiniz?</h2>
+                <p class="section-lead">Kağıt davetiyelerin karmaşasını geride bırakın. Düğün, nişan ve tüm kutlamalarınızı sevgi ve teknolojiyle harmanlayarak yönetin.</p>
+            </div>
+
+            <div class="features-grid">
+                <!-- Feature 1 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-heart-circle-plus"></i>
+                    </div>
+                    <h3>Kolay Organizasyon</h3>
+                    <p>Etkinlik yerini, zamanını ve aşk dolu detaylarını saniyeler içinde belirleyip davetinizi oluşturun.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-users-line"></i>
+                    </div>
+                    <h3>Akıllı Davetli Listesi</h3>
+                    <p>Listenizi Excel'den veya rehberden kolayca aktarın; davetiyelerinizi misafirlerinize özel olarak ulaştırın.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="feature-card">
+                    <div class="feature-icon animate-pulse">
+                        <i class="fa-solid fa-sparkles"></i>
+                    </div>
+                    <h3>AI ile Davetiye Oluşturma</h3>
+                    <p>Yapay zekaya hayalinizdeki temayı, çiçekleri ve renkleri söyleyin; size özel eşsiz tasarımlar hazırlasın.</p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </div>
+                    <h3>Hızlı & Sevgi Dolu Paylaşım</h3>
+                    <p>Tek tıkla WhatsApp, SMS veya özel QR kodlar aracılığıyla sevdiklerinize davetiyenizi hemen iletin.</p>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-map-location-dot"></i>
+                    </div>
+                    <h3>Doğrudan Haritaya Yönlendirme</h3>
+                    <p>Misafirleriniz adres arama stresi yaşamasın; tek tıkla Google Maps veya Apple Maps'e yönlenip kolayca ulaşsınlar.</p>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-envelope-open-text"></i>
+                    </div>
+                    <h3>Canlı LCV (RSVP) Yönetimi</h3>
+                    <p>Kimin katılıp katılamayacağını, özel mesajlarını ve mazeretlerini anlık olarak kontrol panelinizden izleyin.</p>
+                </div>
+
+                <!-- Feature 7 -->
+                <div class="feature-card wide-card">
+                    <div class="wide-card-content">
+                        <div class="feature-icon">
+                            <i class="fa-solid fa-images"></i>
+                        </div>
+                        <h3>Ortak Mutluluk Albümü</h3>
+                        <p>Düğün veya nişan esnasında sevdiklerinizin çektiği tüm güzel, neşeli fotoğrafları doğrudan bu albüme yüklemelerini sağlayın. En samimi anlar tek bir harika havuzda toplansın!</p>
+                    </div>
+                    <div class="wide-card-visual">
+                        <div class="mini-album-grid">
+                            <div class="album-img" style="background-image: url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=300&auto=format&fit=crop')"></div>
+                            <div class="album-img" style="background-image: url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=300&auto=format&fit=crop')"></div>
+                            <div class="album-img" style="background-image: url('https://images.unsplash.com/photo-1520854221256-17451cc35953?q=80&w=300&auto=format&fit=crop')"></div>
+                            <div class="album-img" style="background-image: url('https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?q=80&w=300&auto=format&fit=crop')"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Simulator Section -->
+    <section id="interactive-demo" class="simulator-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-subtitle">Canlı Deneyim Alanı</span>
+                <h2 class="section-title">Davetiyenizi <span class="text-gradient">Şimdi Tasarlayın</span></h2>
+                <p class="section-lead">Aşağıdaki interaktif panelden yapay zeka tasarımcımızı ve LCV / Albüm özelliklerimizi hemen test edebilirsiniz.</p>
+            </div>
+
+            <div class="simulator-wrapper">
+                <!-- Left: Controls -->
+                <div class="simulator-controls glass">
+                    <div class="tabs">
+                        <button class="tab-btn active" data-tab="ai-tab"><i class="fa-solid fa-sparkles"></i> AI Tasarımcı</button>
+                        <button class="tab-btn" data-tab="rsvp-tab"><i class="fa-solid fa-heart"></i> Canlı LCV</button>
+                        <button class="tab-btn" data-tab="album-tab"><i class="fa-solid fa-images"></i> Ortak Albüm</button>
+                    </div>
+
+                    <div class="tab-contents">
+                        <!-- AI Creator Tab -->
+                        <div class="tab-content active" id="ai-tab">
+                            <h3>Hayalinizdeki Temayı Tarif Edin</h3>
+                            <p class="tab-desc">Yapay zekamıza hayalinizdeki renkleri, çiçekleri ve davet konseptinizi yazın.</p>
+                            <div class="prompt-input-group">
+                                <textarea id="ai-prompt" placeholder="Örn: Gül kurusu ve şeftali tonlarında, altın varaklı ve sulu boya çiçek detaylı romantik bir kır düğünü davetiyesi tasarımı yap..."></textarea>
+                                <div class="suggestion-tags">
+                                    <span class="tag" onclick="usePreset('Romantik Gül Kurusu & Altın Varaklı Kır Düğünü')">Romantik Kır Düğünü</span>
+                                    <span class="tag" onclick="usePreset('Sade Şeftali Tonları & Minimalist Çizgiler')">Minimalist Şeftali</span>
+                                    <span class="tag" onclick="usePreset('Zeytin Yaprağı Detaylı & Okaliptüslü Doğal Nişan')">Okaliptüslü Doğal</span>
+                                    <span class="tag" onclick="usePreset('Parıltılı Şampanya & Klasik Yaz Düğünü')">Şampanya & Klasik</span>
+                                </div>
+                                <button class="btn btn-primary btn-block" id="generate-ai-btn">
+                                    <span class="btn-text"><i class="fa-solid fa-wand-magic-sparkles"></i> Tasarımı Hazırla</span>
+                                    <span class="spinner"><i class="fa-solid fa-circle-notch fa-spin"></i></span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- RSVP Tab -->
+                        <div class="tab-content" id="rsvp-tab">
+                            <h3>Canlı Katılım (LCV) Simülatörü</h3>
+                            <p class="tab-desc">Sevdikleriniz davetinize yanıt verdiğinde arka planda çalışan neşeli paneli gözlemleyin.</p>
+                            
+                            <div class="rsvp-simulator-controls">
+                                <div class="input-field">
+                                    <label for="rsvp-guest-name">Davetli Adı</label>
+                                    <input type="text" id="rsvp-guest-name" placeholder="Örn: Melis Yıldırım">
+                                </div>
+                                <div class="rsvp-choices-grid">
+                                    <button class="btn btn-success-outline" id="simulate-accept"><i class="fa-solid fa-heart"></i> Katılıyor</button>
+                                    <button class="btn btn-danger-outline" id="simulate-decline"><i class="fa-solid fa-xmark"></i> Katılamıyor</button>
+                                </div>
+                            </div>
+
+                            <div class="live-stats-box">
+                                <h4>Mutluluğa Eşlik Edenler</h4>
+                                <div class="stats-bars">
+                                    <div class="stat-bar-wrapper">
+                                        <div class="stat-bar-label">Katılıyor (<span id="count-accept">24</span>)</div>
+                                        <div class="stat-bar-bg"><div class="stat-bar-fill fill-green" id="bar-accept" style="width: 80%;"></div></div>
+                                    </div>
+                                    <div class="stat-bar-wrapper">
+                                        <div class="stat-bar-label">Katılamıyor (<span id="count-decline">6</span>)</div>
+                                        <div class="stat-bar-bg"><div class="stat-bar-fill fill-red" id="bar-decline" style="width: 20%;"></div></div>
+                                    </div>
+                                </div>
+                                <div class="recent-replies">
+                                    <h5>Son Gelen Yanıtlar</h5>
+                                    <ul id="replies-list">
+                                        <li><span class="name">Ahmet Yılmaz</span> <span class="status status-accept">Katılıyor</span></li>
+                                        <li><span class="name">Elif Kaya</span> <span class="status status-decline">Katılamıyor</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Shared Album Tab -->
+                        <div class="tab-content" id="album-tab">
+                            <h3>Misafir Fotoğraf Albümü</h3>
+                            <p class="tab-desc">Davetlileriniz düğün anında cep telefonlarından çektikleri en mutlu kareleri anında albümünüze eklesinler.</p>
+                            
+                            <div class="photo-uploader-box">
+                                <div class="file-drop-area" id="file-drop-area">
+                                    <i class="fa-solid fa-camera-retro"></i>
+                                    <p>Fotoğraf Ekle</p>
+                                    <span class="file-info">Simüle fotoğraf yüklemek için buraya tıklayın</span>
+                                    <input type="file" id="photo-upload-input" accept="image/*" style="display: none;">
+                                </div>
+                            </div>
+
+                            <div class="album-preview-list">
+                                <h4>Yüklenen En Tatlı Kareler</h4>
+                                <div class="demo-album-grid" id="album-grid">
+                                    <!-- Dynamic elements will be loaded here -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Live Invitation Preview (Device Screen) -->
+                <div class="simulator-preview">
+                    <div class="phone-frame">
+                        <div class="phone-notch"></div>
+                        <div class="phone-content" id="simulator-phone-content">
+                            <!-- Target invitation template that dynamically changes -->
+                            <div class="invitation-dynamic-card" id="dynamic-card" style="background: linear-gradient(135deg, #fffafb 0%, #fff1f2 100%); color: #431407;">
+                                <div class="inv-decorations">
+                                    <span class="dec-top-left"><i class="fa-solid fa-seedling"></i></span>
+                                    <span class="dec-top-right"><i class="fa-solid fa-seedling"></i></span>
+                                </div>
+                                
+                                <div class="inv-live-wrapper">
+                                    <div class="inv-live-header">Birlikte Kutluyoruz</div>
+                                    <div class="inv-live-names" id="preview-names" style="color: #be123c;">Aylin & Kaan</div>
+                                    <div class="inv-live-desc" id="preview-desc">Ömrümüzün en neşeli ve mutlu gününde sevgimizi paylaşırken sizleri de aramızda görmekten mutluluk duyarız.</div>
+                                    
+                                    <div class="inv-live-details">
+                                        <div class="detail-row">
+                                            <i class="fa-regular fa-calendar-days" style="color: #be123c;"></i>
+                                            <span id="preview-date">12 Eylül 2026</span>
+                                        </div>
+                                        <div class="detail-row">
+                                            <i class="fa-regular fa-clock" style="color: #be123c;"></i>
+                                            <span id="preview-time">19:00</span>
+                                        </div>
+                                        <div class="detail-row">
+                                            <i class="fa-solid fa-map-pin" style="color: #be123c;"></i>
+                                            <span id="preview-loc">Çırağan Sarayı, Beşiktaş / İstanbul</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="inv-live-actions">
+                                        <button class="live-action-btn accept" style="background: #db2777; color: white;" onclick="alert('Simülatör: Katılım bildiriminiz iletildi! Teşekkür ederiz.')"><i class="fa-solid fa-heart"></i> Katılıyorum</button>
+                                        <button class="live-action-btn decline" onclick="alert('Simülatör: Katılamayacağınız belirtildi.')">Katılamıyorum</button>
+                                    </div>
+
+                                    <div class="inv-live-maps">
+                                        <button class="live-map-btn" style="background: rgba(219,39,119,0.06); border-color: rgba(219,39,119,0.2); color: #db2777;" onclick="window.open('https://maps.google.com', '_blank')"><i class="fa-solid fa-compass"></i> Haritaya Yönlendir</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Templates Showcase Section -->
+    <section id="templates" class="templates-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-subtitle">En Tatlı Konseptler</span>
+                <h2 class="section-title">Popüler <span class="text-gradient">Örnek Şablonlar</span></h2>
+                <p class="section-lead">Aşk hikayenizi en güzel yansıtacak, zarafetle bezenmiş davetiye modellerimiz.</p>
+            </div>
+
+            <div class="category-filters">
+                <button class="filter-btn active" data-category="all">Tümü</button>
+                <button class="filter-btn" data-category="wedding">Düğün & Nişan</button>
+                <button class="filter-btn" data-category="birthday">Doğum Günü</button>
+                <button class="filter-btn" data-category="party">Parti & Kutlama</button>
+                <button class="filter-btn" data-category="corporate">Kurumsal</button>
+            </div>
+
+            <div class="templates-grid" id="templates-showcase-grid">
+                <!-- Template 1: Wedding -->
+                <div class="template-card-item" data-category="wedding">
+                    <div class="template-visual">
+                        <div class="template-inner-card theme-floral">
+                            <div class="floral-decor">🌸</div>
+                            <h4>Ebru & Tolga</h4>
+                            <p class="date">28 Ağustos 2026</p>
+                            <span class="badge-theme">Klasik Floral</span>
+                        </div>
+                        <div class="template-overlay">
+                            <button class="btn btn-primary btn-sm" onclick="selectTemplate('Ebru & Tolga', 'Klasik Suluboya Çiçekli', 'wedding')">Şablonu Seç</button>
+                        </div>
+                    </div>
+                    <div class="template-info">
+                        <h3>Zarif Çiçekli Kır Düğünü</h3>
+                        <p>Yumuşak şeftali ve gül tonları ile doğallığı seven mutlu çiftler için.</p>
+                    </div>
+                </div>
+
+                <!-- Template 2: Birthday -->
+                <div class="template-card-item" data-category="birthday">
+                    <div class="template-visual">
+                        <div class="template-inner-card theme-kids">
+                            <div class="kids-decor">🎈</div>
+                            <h4>Can 5 Yaşında!</h4>
+                            <p class="date">15 Temmuz 2026</p>
+                            <span class="badge-theme">Renkli Balonlu</span>
+                        </div>
+                        <div class="template-overlay">
+                            <button class="btn btn-primary btn-sm" onclick="selectTemplate('Can 5 Yaşında!', 'Renkli Balonlu', 'birthday')">Şablonu Seç</button>
+                        </div>
+                    </div>
+                    <div class="template-info">
+                        <h3>Çocuk Doğum Günü</h3>
+                        <p>Neşeli pastel balonlar, mutluluk veren tatlı illüstrasyonlar.</p>
+                    </div>
+                </div>
+
+                <!-- Template 3: Party -->
+                <div class="template-card-item" data-category="party">
+                    <div class="template-visual">
+                        <div class="template-inner-card theme-neon">
+                            <div class="neon-decor">✨</div>
+                            <h4>Yaz Partisi</h4>
+                            <p class="date">04 Temmuz 2026</p>
+                            <span class="badge-theme">Gold Işıltı</span>
+                        </div>
+                        <div class="template-overlay">
+                            <button class="btn btn-primary btn-sm" onclick="selectTemplate('Yaz Partisi', 'Gold Işıltı', 'party')">Şablonu Seç</button>
+                        </div>
+                    </div>
+                    <div class="template-info">
+                        <h3>Altın Işıltılı Havuz Kokteyli</h3>
+                        <p>Şık şampanya tonları ve parıltılı gold detaylar ile enerjik bir kutlama.</p>
+                    </div>
+                </div>
+
+                <!-- Template 4: Corporate -->
+                <div class="template-card-item" data-category="corporate">
+                    <div class="template-visual">
+                        <div class="template-inner-card theme-dark-gold">
+                            <div class="gold-decor">⚜️</div>
+                            <h4>Yıllık Lansman</h4>
+                            <p class="date">10 Aralık 2026</p>
+                            <span class="badge-theme">Zarif Mermer</span>
+                        </div>
+                        <div class="template-overlay">
+                            <button class="btn btn-primary btn-sm" onclick="selectTemplate('Yıllık Lansman', 'Zarif Mermer', 'corporate')">Şablonu Seç</button>
+                        </div>
+                    </div>
+                    <div class="template-info">
+                        <h3>Prestij Gala & Davet</h3>
+                        <p>Minimalist şık mermer çizgiler ve profesyonel yazı stilleri.</p>
+                    </div>
+                </div>
+
+                <!-- Template 5: Wedding -->
+                <div class="template-card-item" data-category="wedding">
+                    <div class="template-visual">
+                        <div class="template-inner-card theme-minimalist">
+                            <div class="minimal-decor">🌿</div>
+                            <h4>Merve & Burak</h4>
+                            <p class="date">19 Eylül 2026</p>
+                            <span class="badge-theme">Okaliptüs Minimalist</span>
+                        </div>
+                        <div class="template-overlay">
+                            <button class="btn btn-primary btn-sm" onclick="selectTemplate('Merve & Burak', 'Okaliptüs Minimalist', 'wedding')">Şablonu Seç</button>
+                        </div>
+                    </div>
+                    <div class="template-info">
+                        <h3>Sade Okaliptüslü Nişan</h3>
+                        <p>Doğal zeytin yaprakları ve taze yeşil dokularla bezenmiş modern şıklık.</p>
+                    </div>
+                </div>
+
+                <!-- Template 6: Party -->
+                <div class="template-card-item" data-category="party">
+                    <div class="template-visual">
+                        <div class="template-inner-card theme-pool">
+                            <div class="pool-decor">🍹</div>
+                            <h4>Sunset Barbecue</h4>
+                            <p class="date">21 Haziran 2026</p>
+                            <span class="badge-theme">Tropikal Yaz</span>
+                        </div>
+                        <div class="template-overlay">
+                            <button class="btn btn-primary btn-sm" onclick="selectTemplate('Sunset Barbecue', 'Tropikal Yaz', 'party')">Şablonu Seç</button>
+                        </div>
+                    </div>
+                    <div class="template-info">
+                        <h3>Yaz Bahçesi Kokteyli</h3>
+                        <p>Egzotik taze meyve tonları, neşeli ve samimi bir yaz esintisi.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Platform Screenshots / Mockups Carousel -->
+    <section class="screenshots-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-subtitle">Profesyonel Yönetim Paneli</span>
+                <h2 class="section-title">Zarif <span class="text-gradient">Kullanıcı Deneyimi</span></h2>
+                <p class="section-lead">Düğün organizasyonunuzu stresten uzak, neşeyle planlayabileceğiniz modern yönetim paneli arayüzümüz.</p>
+            </div>
+
+            <!-- CSS Built Premium Carousel Mockups -->
+            <div class="carousel-container">
+                <div class="mockup-display">
+                    <!-- Slide 1: Event Dashboard -->
+                    <div class="dashboard-mockup glass active-slide" id="slide-1">
+                        <div class="mockup-header">
+                            <div class="dots"><span></span><span></span><span></span></div>
+                            <div class="address-bar">invitify.co/panel/dashboard</div>
+                        </div>
+                        <div class="mockup-body">
+                            <div class="mockup-sidebar">
+                                <div class="side-item active"><i class="fa-solid fa-chart-line"></i> Analiz</div>
+                                <div class="side-item"><i class="fa-solid fa-users"></i> Davetliler</div>
+                                <div class="side-item"><i class="fa-solid fa-palette"></i> Tasarım</div>
+                                <div class="side-item"><i class="fa-solid fa-images"></i> Canlı Albüm</div>
+                            </div>
+                            <div class="mockup-main">
+                                <div class="main-header">
+                                    <h3>Düğün Yönetim Paneli</h3>
+                                    <span class="status-live"><i class="fa-solid fa-circle text-green animate-pulse"></i> Yayında</span>
+                                </div>
+                                <div class="dashboard-grid">
+                                    <div class="dash-card">
+                                        <h5>Toplam Katılımcı</h5>
+                                        <p class="dash-val">184 / 210</p>
+                                    </div>
+                                    <div class="dash-card">
+                                        <h5>Geliyorum Diyenler</h5>
+                                        <p class="dash-val font-green">146</p>
+                                    </div>
+                                    <div class="dash-card">
+                                        <h5>Eklenen Fotoğraflar</h5>
+                                        <p class="dash-val font-purple">92 Adet</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-wrapper">
+                <div class="about-text">
+                    <span class="section-subtitle">Hikayemiz & Vizyonumuz</span>
+                    <h2 class="section-title">En Özel Gününüzü <span class="text-gradient">Eşsiz Kılmak İçin Buradayız</span></h2>
+                    <p>Invitify, geleneksel davetiye süreçlerinin yarattığı kağıt israfını, yüksek baskı masraflarını ve kargo karmaşasını ortadan kaldırarak mutluluğunuzu en şık şekilde paylaşmanızı sağlayan profesyonel bir girişimdir.</p>
+                    <p>Çevre dostu bir yaklaşımla, her yıl yüzlerce ağacın kesilmesini önlerken çiftlerimizin bütçelerini koruyoruz. Yapay zeka destekli modülümüz sayesinde hayallerinizdeki tüm detayları tasarıma döküyor ve sevdiklerinizle tek tıkla yüksek çözünürlüklü paylaşmanıza önayak oluyoruz.</p>
+                    
+                    <div class="about-features-list">
+                        <div class="about-feat-item">
+                            <i class="fa-solid fa-leaf eco-friendly"></i>
+                            <div>
+                                <h4>Sürdürülebilir ve Doğayla Dost</h4>
+                                <p>Sıfır kağıt israfı ile yeşil bir geleceğe katkı sunuyor, sevginizi doğayla paylaşıyoruz.</p>
+                            </div>
+                        </div>
+                        <div class="about-feat-item">
+                            <i class="fa-solid fa-face-smile dynamic-eco"></i>
+                            <div>
+                                <h4>Mutluluk Garantili Deneyim</h4>
+                                <p>Tüm misafirleriniz davetiyenizi açtığı an sıcacık ve mutlu bir tasarımla karşılanır.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-visual">
+                    <div class="glass about-stats-card">
+                        <div class="icon-pulse"><i class="fa-solid fa-piggy-bank"></i></div>
+                        <h3>%90 Bütçe Tasarrufu</h3>
+                        <p>Matbaa ve posta masraflarından tasarruf edip bütçenizi diğer düğün hazırlıklarınıza ayırın.</p>
+                    </div>
+                    <div class="glass about-stats-card-2">
+                        <div class="icon-pulse"><i class="fa-solid fa-seedling"></i></div>
+                        <h3>1.2 Milyon+ Yaprak Kağıt</h3>
+                        <p>Kurtardığımız binlerce ağaç ve doğaya kattığımız can suyu ile gurur duyuyoruz.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-subtitle">Sıcak Bir Merhaba</span>
+                <h2 class="section-title">Bizimle İletişime Geçin</h2>
+                <p class="section-lead">Kafanıza takılan tüm sorular veya iş birliği önerileri için güler yüzlü destek ekibimizle dilediğiniz an görüşebilirsiniz.</p>
+            </div>
+
+            <div class="contact-grid">
+                <!-- Contact Info Cards -->
+                <div class="contact-info">
+                    <div class="contact-card glass">
+                        <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+                        <div>
+                            <h4>E-posta Adresimiz</h4>
+                            <p>merhaba@invitify.co</p>
+                            <p>destek@invitify.co</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-card glass">
+                        <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+                        <div>
+                            <h4>Müşteri İlişkileri</h4>
+                            <p>+90 (850) 123 45 67</p>
+                            <p>Pazartesi - Cumartesi | 09:00 - 18:00</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-card glass">
+                        <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+                        <div>
+                            <h4>Ofisimiz</h4>
+                            <p>Maslak Teknokent, No: 42 B-Blok</p>
+                            <p>Sarıyer / İstanbul</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form-wrapper glass">
+                    <form id="main-contact-form" onsubmit="handleContactSubmit(event)">
+                        <div class="form-row">
+                            <div class="input-field">
+                                <label for="form-name">Adınız Soyadınız</label>
+                                <input type="text" id="form-name" required placeholder="Örn: Burak Şahin">
+                            </div>
+                            <div class="input-field">
+                                <label for="form-email">E-posta Adresiniz</label>
+                                <input type="email" id="form-email" required placeholder="burak@ornek.com">
+                            </div>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="form-subject">Konu</label>
+                            <input type="text" id="form-subject" required placeholder="Size nasıl destek olabiliriz?">
+                        </div>
+
+                        <div class="input-field">
+                            <label for="form-message">Mesajınız</label>
+                            <textarea id="form-message" required placeholder="Bizlere iletmek istediğiniz sevimli mesajınızı yazın..." rows="5"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block" id="form-submit-btn">
+                            <span class="submit-text"><i class="fa-regular fa-paper-plane"></i> Mesajını İlet</span>
+                            <span class="submit-spinner"><i class="fa-solid fa-spinner fa-spin"></i> Gönderiliyor...</span>
+                        </button>
+                        <div class="form-response-message" id="form-response"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="#" class="logo">
+                    <span class="logo-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></span>
+                    <span class="logo-text">Invitify</span>
+                </a>
+                <p>Yeni nesil akıllı ve mutluluk verici dijital davetiye platformu. Kağıtsız, stressiz ve tamamen sevgiyle planlanan organizasyonların buluşma noktası.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h4>Ürünümüz</h4>
+                <a href="#features">Özellikler</a>
+                <a href="#templates">Şablonlar</a>
+                <a href="#interactive-demo">Canlı Simülasyon</a>
+                <a href="#">Fiyat Listesi</a>
+            </div>
+
+            <div class="footer-links">
+                <h4>Şirketimiz</h4>
+                <a href="#about">Hakkımızda</a>
+                <a href="#">Kariyer Fırsatları</a>
+                <a href="#">Yeşil Gelecek</a>
+                <a href="#contact">İletişim</a>
+            </div>
+
+            <div class="footer-links">
+                <h4>Yasal Detaylar</h4>
+                <a href="#">Kullanım Şartları</a>
+                <a href="#">Gizlilik İlkeleri</a>
+                <a href="#">Çerez Politikası</a>
+                <a href="#">KVKK Bilgilendirmesi</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container footer-bottom-flex">
+                <p>&copy; 2026 Invitify. Tüm Hakları Saklıdır.</p>
+                <p>Sevgiyle Tasarlandı: <i class="fa-solid fa-heart text-pink"></i> Antigravity & Yazılım Atölyesi</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="app.js"></script>
+</body>
+</html>
